@@ -1,0 +1,41 @@
+<div class="form-content">
+  <div class="signup-form">
+    <h1>Welcome to BridgeLabs Onboarding</h1>
+    <h2>Create an account Here</h2>
+    <form [formGroup]="userService.signupForm">
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email">
+        <mat-error *ngIf="userService.requiredEmail(userService.signupForm)">Email is required</mat-error>
+        <mat-error *ngIf="userService.wrongEmail(userService.signupForm)">Email field cannot be left empty</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>First Name</mat-label>
+        <input type="text" matInput formControlName="first_name">
+      </mat-form-field>
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Last Name</mat-label>
+        <input type="text" matInput formControlName="last_name">
+      </mat-form-field>
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Telephone</mat-label>
+        <input type="text" matInput formControlName="phone">
+      </mat-form-field>
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Password</mat-label>
+        <input [type]="viewState ? 'text' : 'password'" matInput formControlName="password">
+        <mat-icon matSuffix (click)="passwordToggle()" *ngIf="!viewState">visibility_off</mat-icon>
+        <mat-icon matSuffix (click)="passwordToggle()" *ngIf="viewState">visibility</mat-icon>
+        <mat-error *ngIf="userService.wrongPassword(userService.signupForm)">Password is invalid</mat-error>
+        <mat-error *ngIf="userService.requiredPassword(userService.signupForm)">Password field cannot be left empty</mat-error>
+      </mat-form-field>
+        <input type="file" formControlName="avatar" alt="Avatar">
+      <button mat-raised-button type="button" [disabled]="userService.signupForm.invalid" (click)="userService.register()">Signup</button>
+      <button mat-raised-button type="button" [routerLink]="['/users', 'auth', 'login']">Login Instead?</button>
+      <mat-error *ngIf="userService.formValidator(userService.signupForm)">One or more fields are invalid</mat-error>
+    </form>
+  </div>
+  <div class="signup-image">
+    <img src="assets/images/ai-landing.svg" alt="bicycle">
+  </div>
+</div>

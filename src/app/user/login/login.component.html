@@ -1,0 +1,28 @@
+<div class="form-content">
+  <div class="signup-form">
+    <h1>Welcome back to BridgeLabs Onboarding</h1>
+    <h2>Login Here</h2>
+    <form [formGroup]="userService.loginForm">
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email">
+        <mat-error *ngIf="userService.requiredEmail(userService.loginForm)">Email is required</mat-error>
+        <mat-error *ngIf="userService.wrongEmail(userService.loginForm)">Email field cannot be left empty</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Password</mat-label>
+        <input [type]="viewState ? 'text' : 'password'" matInput formControlName="password">
+        <mat-icon matSuffix (click)="passwordToggle()" *ngIf="!viewState">visibility_off</mat-icon>
+        <mat-icon matSuffix (click)="passwordToggle()" *ngIf="viewState">visibility</mat-icon>
+        <mat-error *ngIf="userService.wrongPassword(userService.loginForm)">Password is invalid</mat-error>
+        <mat-error *ngIf="userService.requiredPassword(userService.loginForm)">Password field cannot be left empty</mat-error>
+      </mat-form-field>
+      <button mat-raised-button type="button" [disabled]="userService.loginForm.invalid" (click)="userService.login()">Login</button>
+      <button mat-raised-button type="button" [routerLink]="['/users', 'auth', 'signup']">Signup Instead?</button>
+      <mat-error *ngIf="userService.formValidator(userService.loginForm)">One or more fields are invalid</mat-error>
+    </form>
+  </div>
+  <div class="signup-image">
+    <img src="assets/images/ai-landing.svg" alt="bicycle">
+  </div>
+</div>

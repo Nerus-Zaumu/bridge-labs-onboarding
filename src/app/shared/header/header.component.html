@@ -1,0 +1,37 @@
+<mat-toolbar>
+  <div class="brand">
+    <mat-label>BridgeLabs</mat-label>
+  </div>
+  <mat-list>
+     <div class="main">
+      <mat-list-item [ngClass]="{'hide-link': true}">
+        <a [routerLink]="['/dashboard', 'home']">Dashboard</a>
+     </mat-list-item>
+     <mat-list-item [ngClass]="{'hide-link': true}">
+      <a [routerLink]="['/dashboard', 'create']">Create</a>
+     </mat-list-item>
+     </div>
+      <div class="avatar">
+        <img src="assets/images/person.png" alt="" mat-card-sm-image [matMenuTriggerFor]="menu">
+      </div>
+      <mat-menu #menu>
+        <mat-nav-list>
+          <mat-list-item>
+            <mat-label>{{ email }}</mat-label>
+          </mat-list-item>
+            <mat-list-item [ngClass]="{'show-dropdown': true}">
+              <a [routerLink]="['/dashboard', 'home']">Dashboard</a>
+              <mat-icon class="mat-18" matSuffix>home</mat-icon>
+           </mat-list-item>
+           <mat-list-item [ngClass]="{'show-dropdown': true}">
+            <a [routerLink]="['/dashboard', 'create']">Create</a>
+            <mat-icon class="mat-18" matSuffix>create</mat-icon>
+           </mat-list-item>
+           <mat-list-item>
+            <a (click)="logout()">Logout</a>
+           <mat-icon class="mat-18" matSuffix >logout</mat-icon>
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-menu>
+  </mat-list>
+</mat-toolbar>

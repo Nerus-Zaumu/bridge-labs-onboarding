@@ -1,0 +1,33 @@
+.container{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container > div{
+  width: 100%;
+}
+
+.cards{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards > mat-card{
+  width: 90%;
+  margin-top: 3%;
+  border: 1px solid var(--primaryTextColor);
+}
+
+mat-card-title-group{
+  color: var(--primaryTextColor);
+}
+
+mat-card button{
+  color: white;
+  background-color: var(--primaryTextColor);
+}

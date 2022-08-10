@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="head">
+    <app-header></app-header>
+  </div>
+  <div class="home">
+    <div class="cards">
+      <mat-card *ngFor="let data of dataService.cloudCards">
+          <mat-card-title-group>
+              <mat-card-title>{{ data.name }}</mat-card-title>
+              <img mat-card-sm-image [src]="data.image">
+          </mat-card-title-group>
+          <mat-card-content>
+              {{ data.description }}
+          </mat-card-content>
+          <mat-card-actions align="start">
+              <button mat-button (click)="view(data.id.toString())">View</button>
+          </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

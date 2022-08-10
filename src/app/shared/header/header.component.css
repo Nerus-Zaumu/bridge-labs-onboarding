@@ -1,0 +1,89 @@
+mat-toolbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primaryTextColor);
+  color: white;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+mat-label{
+  font-size: 120%;
+  color: var(--primaryTextColor);
+}
+
+mat-toolbar > div{
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-toolbar > mat-list{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-list a{
+  text-decoration: none;
+  color: white;
+}
+
+mat-list a:focus{
+  color: wheat;
+}
+
+mat-nav-list a{
+  color: var(--primaryTextColor);
+}
+
+mat-nav-list mat-icon{
+  color: var(--primaryTextColor);
+}
+
+.avatar{
+  height: 100%;
+  width: 10%;
+  margin-right: 5%;
+}
+
+.avatar img{
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.show-dropdown{
+  display: none !important;
+}
+
+@media(max-width: 460px){
+  .hide-link{
+    display: none !important;
+  }
+  .show-dropdown{
+    display: block !important;
+  }
+
+  .avatar{
+    height: 100%;
+    width: 20%;
+  }
+}
+

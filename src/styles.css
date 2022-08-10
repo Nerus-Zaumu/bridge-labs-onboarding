@@ -1,0 +1,86 @@
+:root{
+  --primaryBackgroundOne: #fff;
+  --primaryBackgroundTwo: #F4F4F4;
+  --primaryTextColor: #3753FB;
+  --secondaryTextColor: #8E8E8E;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: RooneySans-Regular, "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", sans-serif;
+}
+
+.content > *{
+  width: 50%;
+  height: 100%;
+}
+
+/* div img{
+  animation: svg-animate 3s ease 300ms infinite;
+}
+
+@keyframes svg-animate {
+  0%{
+    transform: translateX(0%);
+  }
+  34%{
+    transform: translateX(30%);
+  }
+  67%{
+    transform: translateX(-30%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
+} */
+
+@keyframes button-animation {
+  0%{
+    opacity: 0.4;
+  }
+  33%{
+    opacity: 0.7;
+  }
+  66%{
+    opacity: 0.9;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+button:focus{
+  animation: button-animation 3s ease-in-out 100ms forwards;
+}
+
+@media(max-width: 690px){
+  .content{
+      flex-direction: column-reverse;
+  }
+
+  .content > section{
+      width: 100%;
+      height: 50%;
+  }
+
+  section:first-child{
+      padding-bottom: 10%;
+  }
+
+
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

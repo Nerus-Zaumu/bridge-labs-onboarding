@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/bridge-labs-onboarding",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
